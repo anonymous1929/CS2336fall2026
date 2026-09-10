@@ -1,4 +1,3 @@
-
 // Simple examples of JavaScript data types
 // String: text
 let studentName = "Alex";
