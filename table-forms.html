@@ -1,31 +1,46 @@
+<!-- Comments explain the source code but do not appear as text on the page. -->
 <!DOCTYPE html>
+<!-- The doctype above tells the browser to use modern HTML standards.
+     lang="en" identifies English as the page's language. -->
 <html lang="en">
 <head>
+    <!-- The head contains page settings. UTF-8 supports many characters and symbols. -->
     <meta charset="UTF-8">
+    <!-- Match the page width to the device's screen and start at normal zoom. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This title appears in the browser tab. -->
     <title>HTML Tables and Form Controls</title>
+    <!-- CSS inside style controls appearance. CSS comments use slash-star markers. -->
     <style>
+        /* Commas select multiple element types. Give tables and their cells a border. */
         table, th, td {
             border: 1px solid black;
         }
 
+        /* Merge neighboring cell borders into a single line. */
         table {
             border-collapse: collapse;
         }
 
+        /* Padding adds space between each cell's content and its border. */
         th, td {
             padding: 5px;
         }
     </style>
 </head>
 <body>
+    <!-- The body contains the visible page. h1 is the main heading;
+         h2 headings introduce sections, and p elements contain paragraphs. -->
     <h1>HTML Tables and Form Controls</h1>
 
     <h2>1. Basic Table</h2>
     <p>A table uses rows and columns to organize information.</p>
 
+    <!-- A table organizes related data into rows and cells. -->
     <table>
+        <!-- A caption names the table for readers, including screen reader users. -->
         <caption>Student Grades</caption>
+        <!-- thead groups the heading rows. tr starts a row; th is a heading cell. -->
         <thead>
             <tr>
                 <th>Name</th>
@@ -33,6 +48,8 @@
                 <th>Grade</th>
             </tr>
         </thead>
+        <!-- tbody groups the data rows. Each td holds one cell's data.
+             Keep cells in the same order as their column headings. -->
         <tbody>
             <tr>
                 <td>Ana</td>
@@ -47,6 +64,8 @@
         </tbody>
     </table>
 
+    <!-- code marks a code example. &lt; and &gt; display literal angle brackets
+         so the browser shows the tag names instead of treating them as HTML. -->
     <p>
         <code>&lt;table&gt;</code> creates the table,
         <code>&lt;tr&gt;</code> creates a row,
@@ -59,6 +78,7 @@
 
     <table>
         <tr>
+            <!-- This heading spans the first-name and last-name columns below it. -->
             <th colspan="2">Student Name</th>
             <th>Grade</th>
         </tr>
@@ -78,10 +98,12 @@
             <th>Student</th>
         </tr>
         <tr>
+            <!-- This course cell spans both Ana's row and Ben's row. -->
             <td rowspan="2">HTML</td>
             <td>Ana</td>
         </tr>
         <tr>
+            <!-- The course cell above already occupies this row's first column. -->
             <td>Ben</td>
         </tr>
     </table>
@@ -89,22 +111,34 @@
     <h2>4. Simple Form</h2>
     <p>A form collects information from a user.</p>
 
+    <!-- action specifies where to submit the form; # points to the current page.
+         GET puts named field values in the URL query string (for example, ?name=Ana).
+         This example has no server code to save or email the submitted information. -->
     <form action="#" method="get">
         <p>
+            <!-- A label's for value matches the input's id, connecting them.
+                 Clicking the label focuses its input. An id must be unique on the page. -->
             <label for="name">Name:</label>
+            <!-- type="text" creates a single-line field. name is the key used
+                 when submitting its value; id identifies the element on the page. -->
             <input type="text" id="name" name="name">
         </p>
 
         <p>
             <label for="email">Email:</label>
+            <!-- An email input checks the format of a nonempty value on submission.
+                 Neither field is mandatory because neither has the required attribute. -->
             <input type="email" id="email" name="email">
         </p>
 
+        <!-- A submit button submits the form that contains it. -->
         <button type="submit">Send</button>
     </form>
 
     <h2>5. More Form Controls</h2>
 
+    <!-- This is a separate form. Without action or method, it submits to the
+         current page using GET. Only controls in this form are submitted with it. -->
     <form>
         <p>
             <label for="student-name">Name:</label>
@@ -113,6 +147,9 @@
 
         <p>
             <label for="course">Course:</label>
+            <!-- select creates a drop-down menu; each option is a choice.
+                 The chosen option's value is submitted, such as course=html.
+                 The first option is selected by default in this menu. -->
             <select id="course" name="course">
                 <option value="html">HTML</option>
                 <option value="css">CSS</option>
@@ -121,6 +158,8 @@
         </p>
 
         <p>Class time:</p>
+        <!-- Radio buttons with the same name form a group: only one can be selected.
+             Only the selected button's value is submitted; initially neither is selected. -->
         <input type="radio" id="morning" name="classTime" value="morning">
         <label for="morning">Morning</label>
 
@@ -128,6 +167,8 @@
         <label for="afternoon">Afternoon</label>
 
         <p>Topics you like:</p>
+        <!-- Checkboxes are independent, so users can select both, either, or neither.
+             Only checked boxes are submitted. Both can submit under the name topics. -->
         <input type="checkbox" id="tables" name="topics" value="tables">
         <label for="tables">Tables</label>
 
@@ -136,6 +177,8 @@
 
         <p>
             <button type="submit">Submit</button>
+            <!-- Reset restores initial values: here it empties the name, selects HTML,
+                 and unchecks the radios and checkboxes. It does not submit the form. -->
             <button type="reset">Clear</button>
         </p>
     </form>
@@ -144,6 +187,7 @@
     <p>This table displays a small class schedule.</p>
 
     <table>
+        <!-- Each row below has three cells matching Day, Time, and Topic. -->
         <caption>Weekly Class Schedule</caption>
         <tr>
             <th>Day</th>
