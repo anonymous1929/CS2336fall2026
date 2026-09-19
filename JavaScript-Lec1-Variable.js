@@ -1,36 +1,42 @@
-// Simple examples of JavaScript data types
-// String: text
-let studentName = "Alex";
-// Number: an integer or decimal
-let age = 20;
-let grade = 95.5;
-// Boolean: true or false
-let isStudent = true;
-// Undefined: a variable without a value
-let favoriteColor;
-// Null: an intentionally empty value
-let middleName = null;
-// Array: a list of values
-let courses = ["HTML", "CSS", "JavaScript"];
-// Object: related information stored as properties
-let student = {
-name: "Alex",
-age: 20
-};
-// BigInt: a very large whole number
-let veryLargeNumber = 12345678901234567890n;
-// Symbol: a unique value
-let studentId = Symbol("studentId");
-console.log(studentName);
-console.log(age);
-console.log(grade);
-console.log(isStudent);
-console.log(favoriteColor);
-console.log(middleName);
-console.log(courses);
-console.log(student);
-console.log(veryLargeNumber);
-console.log(studentId);
+// // Simple examples of JavaScript data types
+// // String: text
+// let studentName = "Al" + "ex";
+// // Number: an integer or decimal
+// let age = 20;
+
+// {
+//     let age = 21; // This age variable is scoped to this block
+// }
+// let grade = 95.5;
+// // Boolean: true or false
+// let isStudent = true;
+// // Undefined: a variable without a value
+// let favoriteColor;
+// // Null: an intentionally empty value
+// let middleName = null;
+// // Array: a list of values
+// let courses = ["HTML", "CSS", "JavaScript"];
+// // Object: related information stored as properties
+// let student = {
+// name: "Alex",
+// age: 20
+// };
+// // BigInt: a very large whole number
+// let veryLargeNumber = 12345678901234567890n;
+// // Symbol: a unique value
+// let studentId = Symbol("studentId");
+// console.log(studentName);
+// console.log(age);
+// console.log(grade);
+// console.log(isStudent);
+// console.log(favoriteColor);
+// console.log(middleName);
+// console.log(courses);
+// console.log(student);
+// console.log(veryLargeNumber);
+// console.log(studentId);
+
+
 // --------------------------------------------------
 // The difference between let and const
 // --------------------------------------------------
@@ -71,3 +77,13 @@ console.log(colors); // ["green", "blue", "yellow"]
 // The const array can be changed, but it cannot be replaced.
 // This would cause an error:
 // colors = ["black", "white"];
+
+
+for(let i = 1; i <= 10; i++) {
+    if (i % 3 === 0){
+        console.log("Divisible by 3");
+    }
+    else{
+        console.log(i);
+    }
+}
