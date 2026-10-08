@@ -30,7 +30,7 @@
   <p class="note">External JavaScript is usually best for larger projects because HTML and JavaScript stay organized in separate files.</p>
 
   <script>
-    const internalButton = document.querySelector('#internalButton');
+    const internalButton = document.querySelector('#internalButton');//# indicates the id sign
     internalButton.addEventListener('click', function () {
       document.querySelector('#internalMessage').textContent = 'Hello from an internal script!';
     });
